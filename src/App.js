@@ -10,7 +10,7 @@ function App() {
         <p>
           ¿Crees que es muy difícil encontrar el mejor precio para tus compras?
         </p>
-        <p>¡Inscribete a continuación si te interesa!</p>
+        <p>¡Inscríbete a continuación si te interesa!</p>
       </header>
     </div>
   );
