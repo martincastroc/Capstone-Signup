@@ -18,13 +18,11 @@ function Form() {
     setInputs(values => {return {...values,[name]:value}})
   }
 
-  // TODO: Post form data to supabase
   const handleSubmit = async (event) => {
     event.preventDefault();
     const {data,error} = await supabase
       .from('clients')
       .insert([inputs]);
-    console.log(error);
     alert('Te has registrado. ¡Muchas Gracias!');
   }
 

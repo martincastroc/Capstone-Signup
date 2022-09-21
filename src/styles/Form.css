@@ -32,7 +32,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: violet;
+  background-color: rgb(167, 2, 167);
 }
 
 /* .fm {
