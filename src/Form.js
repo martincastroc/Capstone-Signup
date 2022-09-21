@@ -48,7 +48,7 @@ function Form() {
           onChange={handleChange}/>
    
       <br></br>
-      <label> Teléfono: (+56 9)</label>
+      <label> Teléfono (+56 9):</label>
       <br></br>
         <input 
           type='number'
