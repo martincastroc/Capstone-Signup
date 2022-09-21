@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import './styles/Form.css'
+import { supabase }  from './supabaseClient';
 
 function Form() {
 
-  const [inputs,setInputs] = useState({});
+  const [inputs,setInputs] = useState({
+    full_name:"",
+    email:"",
+    phone_number:"",
+    commune:"",
+    income_range:"",
+    family_members:"",
+  });
   
   const handleChange = (event) => {
     const {name,value} = event.target
@@ -11,32 +19,39 @@ function Form() {
   }
 
   // TODO: Post form data to supabase
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(inputs);
+    const {data,error} = await supabase
+      .from('clients')
+      .insert([inputs]);
+    console.log(error);
+    alert('Te has registrado. ¡Muchas Gracias!');
   }
 
   return(
+    
     <form onSubmit={handleSubmit}>
-      <label> Nombre Completo:
-        <input 
+      <div class="fm">
+      <label> Nombre Completo:</label>
+        <input
           type="text" 
           name = "full_name"
           placeholder='Tu Nombre'
           value={inputs.full_name || ""}
           onChange={handleChange}/>
-      </label> 
+       
       <br></br>
-      <label> Correo electrónico:
+      <label> Correo electrónico:   </label>
         <input 
           type="email"
           name='email'
           placeholder='ejemplo@ejemplo.com'
           value={inputs.email || ""}
           onChange={handleChange}/>
-      </label>
+   
       <br></br>
-      <label> Teléfono: (+56 9)
+      <label> Teléfono: (+56 9)</label>
+      <br></br>
         <input 
           type='number'
           name='phone_number'
@@ -44,9 +59,10 @@ function Form() {
           value={inputs.phone_number || ""}
           onChange={handleChange}
           />
-      </label>
+      
       <br></br>
-      <label> Comuna:
+      <label> Comuna: </label>
+      <br></br>
         <select name='commune' value={inputs.commune} onChange={handleChange}>
           <option value=''>--Elegir--</option>
           <option value="Cerrillos">Cerrillos</option>
@@ -82,9 +98,9 @@ function Form() {
           <option value="Santiago">Santiago</option>
           <option value="Vitacura">Vitacura</option>
         </select>
-      </label>
+      
       <br></br>
-      <label> Rango de Ingresos (CLP):
+      <label> Rango de Ingresos (CLP):</label>
         <select name='income_range' value={inputs.income_range} onChange={handleChange}>
           <option value=''>--Elegir--</option>
           <option value='<400.000'>Menor que 400.000</option>
@@ -98,9 +114,9 @@ function Form() {
           <option value='1.800.000 - 2.000.000'>Entre 1.800.000 y 2.000.000</option>
           <option value='>2.000.000'>Mayor a 2.000.000</option>
         </select>
-      </label>
+      
       <br></br>
-      <label>Numero de Personas en tu casa:
+      <label>Numero de Personas en tu casa:</label>
         <input 
         type="number"
         name='family_members'
@@ -108,10 +124,11 @@ function Form() {
         value={inputs.family_members}
         onChange={handleChange}
         />
-      </label>
       <br></br>
+      </div>
       <input type='submit' value='Listo'/>
     </form>
+    
   )
 }
 
