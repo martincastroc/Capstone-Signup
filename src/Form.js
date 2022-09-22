@@ -48,12 +48,13 @@ function Form() {
           onChange={handleChange}/>
    
       <br></br>
-      <label> Teléfono (+56 9):</label>
+      <label> Teléfono (sin incluir +56 9):</label>
       <br></br>
         <input 
           type='number'
           name='phone_number'
-          placeholder='12345678'
+          maxLength={8}
+          placeholder='ej: 12345678'
           value={inputs.phone_number || ""}
           onChange={handleChange}
           />

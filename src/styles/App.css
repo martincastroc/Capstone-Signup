@@ -12,3 +12,22 @@
   font-size: calc(10px + 2vmin);
   color: #282c34;
 }
+
+.arrow {
+  border: solid #282c34;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  animation: Move 3s linear infinite;
+}
+
+@keyframes Move {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(45deg);
+  }
+}
