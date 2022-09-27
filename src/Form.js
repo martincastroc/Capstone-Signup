@@ -64,8 +64,11 @@ function Form() {
       <br></br>
         <select name='commune' value={inputs.commune} onChange={handleChange}>
           <option value=''>--Elegir--</option>
+          <option value="Buin">Buin</option>
+          <option value="Calera de Tango">Calera de Tango</option>
           <option value="Cerrillos">Cerrillos</option>
           <option value="Cerro Navia">Cerro Navia</option>
+          <option value="Colina">Colina</option>
           <option value="Conchalí">Conchalí</option>
           <option value="El Bosque">El Bosque</option>
           <option value="Estación Central">Estación Central</option>
@@ -76,6 +79,7 @@ function Form() {
           <option value="La Granja">La Granja</option>
           <option value="La Pintana">La Pintana</option>
           <option value="La Reina">La Reina</option>
+          <option value="Lampa">Lampa</option>
           <option value="Las Condes">Las Condes</option>
           <option value="Lo Barnechea">Lo Barnechea</option>
           <option value="Lo Espejo">Lo Espejo</option>
@@ -83,8 +87,10 @@ function Form() {
           <option value="Macul">Macul</option>
           <option value="Maipú">Maipú</option>
           <option value="Ñuñoa">Ñuñoa</option>
+          <option value="Paine">Paine</option>
           <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
           <option value="Peñalolén">Peñalolén</option>
+          <option value="Pirque">Pirque</option>
           <option value="Providencia">Providencia</option>
           <option value="Pudahuel">Pudahuel</option>
           <option value="Puente Alto">Puente Alto</option>
@@ -92,10 +98,13 @@ function Form() {
           <option value="Quinta Normal">Quinta Normal</option>
           <option value="Recoleta">Recoleta</option>
           <option value="Renca">Renca</option>
+          <option value="San Bernardo">San Bernardo</option>
           <option value="San Joaquín">San Joaquín</option>
+          <option value="San José de Maipo">San José de Maipo</option>
           <option value="San Miguel">San Miguel</option>
           <option value="San Ramón">San Ramón</option>
           <option value="Santiago">Santiago</option>
+          <option value="Til-Til">Til-Til</option>
           <option value="Vitacura">Vitacura</option>
         </select>
       
