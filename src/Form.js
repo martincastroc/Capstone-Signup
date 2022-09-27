@@ -87,6 +87,7 @@ function Form() {
           <option value="Peñalolén">Peñalolén</option>
           <option value="Providencia">Providencia</option>
           <option value="Pudahuel">Pudahuel</option>
+          <option value="Puente Alto">Puente Alto</option>
           <option value="Quilicura">Quilicura</option>
           <option value="Quinta Normal">Quinta Normal</option>
           <option value="Recoleta">Recoleta</option>
